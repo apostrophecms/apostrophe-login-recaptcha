@@ -31,7 +31,7 @@ module.exports = {
         throw 'Please check the box to confirm you are a human being.';
       }
     };
-    self.on('apostrophe-login:beforeLoginAttempt', 'checkCaptchaOnLoginAttempt', async function({ req }) {
+    self.on('apostrophe-login:beforeLoginAttempt', 'checkCaptchaOnLoginAttempt', async function(req) {
       return self.checkCaptcha(req, req.body['g-recaptcha-response']);
     });
     self.on('apostrophe-pages:beforeSend', 'createLoginCaptchaSingleton', function(req) {

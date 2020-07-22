@@ -1,3 +1,4 @@
+/test-credentials
 package-lock.json
 yarn.lock
 test/public/modules/*
