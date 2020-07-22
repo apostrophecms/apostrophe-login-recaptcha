@@ -1,0 +1,27 @@
+{
+  "name": "apostrophe-login-recaptcha",
+  "version": "1.0.0",
+  "description": "Require completion of a CAPTCHA before allowing local login to apostrophe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apostrophecms/apostrophe-login-recaptcha.git"
+  },
+  "keywords": [
+    "captcha",
+    "apostrophecms"
+  ],
+  "author": "Apostrophe Technologies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apostrophecms/apostrophe-login-captcha/issues"
+  },
+  "homepage": "https://github.com/apostrophecms/apostrophe-login-captcha#readme",
+  "dependencies": {
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
