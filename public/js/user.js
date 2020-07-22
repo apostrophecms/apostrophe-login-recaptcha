@@ -15,7 +15,7 @@ apos.define('apostrophe-login-recaptcha', {
       // Probably not a login page
       return;
     }
-    
+
     var $button = $form.find('[data-apos-login-submit-button]');
     if (!$button.length) {
       // Fallback for old templates
@@ -29,26 +29,26 @@ apos.define('apostrophe-login-recaptcha', {
     $recaptcha.attr('id', 'aposLoginRecaptcha');
     $recaptcha.attr('data-size', 'compact');
     $button.before($recaptcha);
-  
+
     window.aposLoginRenderCaptcha = renderCaptcha;
     addRecaptchaScript();
-  
+
     function addRecaptchaScript () {
       if (document.querySelector('[data-apos-recaptcha-script]')) {
         renderCaptcha();
         return;
       }
       var refreshable = document.querySelector('[data-apos-refreshable]');
-      var recaptchaScript = document.createElement("script");
-      recaptchaScript.src = "https://www.google.com/recaptcha/api.js?onload=aposLoginRenderCaptcha&render=explicit";
+      var recaptchaScript = document.createElement('script');
+      recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?onload=aposLoginRenderCaptcha&render=explicit';
       recaptchaScript.setAttribute('data-apos-recaptcha-script', '');
       recaptchaScript.setAttribute('async', '');
       recaptchaScript.setAttribute('defer', '');
       refreshable.appendChild(recaptchaScript);
     }
-  
+
     function renderCaptcha () {
-      grecaptcha.render('aposLoginRecaptcha', {
+      window.grecaptcha.render('aposLoginRecaptcha', {
         sitekey: options.recaptchaSite
       });
     }
