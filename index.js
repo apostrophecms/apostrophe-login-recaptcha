@@ -38,6 +38,9 @@ module.exports = {
       self.pushCreateSingleton(req, 'user');
     });
     self.getCreateSingletonOptions = function(req) {
+      if (!self.options.recaptchaSite) {
+        self.apos.utils.warnDev('You forgot to configure the recaptchaSite option for the apostrophe-login-recaptcha module.');
+      }
       return {
         recaptchaSite: self.options.recaptchaSite
       };
